@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Last Updated: <code data-th-text="${timestamp}"></code></h1>
+    <table border =1>
+        <tbody>
+            <th>Symbol</th>
+            <th>Open Price</th>
+            <th>Last Price</th>
+            <th>% Change</th>
+            <th>Volume</th>
+            <tr data-th-each="crypto : ${allCrypto}">
+                <td data-th-text="${crypto.getSymbol}"></td>
+                <td data-th-text="${crypto.getOpenPrice}"></td>
+                <td data-th-text="${crypto.getLastPrice}"></td>
+                <td data-th-text="${crypto.getPriceChangePercent}"></td>
+                <td data-th-text="${crypto.getVolume}"></td>
+               
+            </tr>
+        </tbody>
+
+    </table>
+</body>
+</html>
